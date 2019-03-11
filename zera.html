@@ -17,14 +17,22 @@
         <a href="inne.html">Przydatne linki</a>
     </div>
     <header><h2 class="logo"><img src="logo1.jpg"/>MIEJSCA ZEROWE FUNKCJI</h2></header>
-    <div class="content"><img src="pi.jpg" width=80px height=80px class="image-to-right">
-      Zastosowanie pierwszych metod numerycznych datuje się na 1650 r. p. n. e., gdzie na Papirusie Rhinda oszacowano wartość pi na 44/34, czyli około 3,16. Obecnie mimo tysięcy lat postępu jedyną możliwością poznania pi jest jej przybliżanie metodami numerycznymi, ze względu na samą naturę liczby. Wykorzystując złożone obliczenia analityczne i potężną moc komputerów w 2016 roku przybliżono ją do 22,5 biliona miejsc po przecinku.
-    </div>
-    <div class="content"><img src="eniac.jpg" width=400 height=auto class="image-to-center">
-      Rozwój metod numerycznych przyspieszył wraz ze skonstruowaniem komputerów elektronicznych.  Już wcześniej wykorzystywano różnorodne maszyny lub przyrządy do liczenia (liczydła, czy komputery mechaniczne z XIX wieku), lecz to elektronika jest dzisiaj podstawowym narzędziem pracy w tej dziedzinie. Jeden z pierwszych komputerów, ENIAC, już w 1943 obliczał trajektorie pocisków balistycznych aby pomóc niedoświadczonym oficerom na froncie. Sprzęt pomagał również w prognozowaniu pogody, czy badaniu liczb losowych.
-    </div>
     <div class="content">
-      Współcześnie komputery osobiste o mocy niewyobrażalnie większej ich poprzedników i tym samym prędkości niedoścignionej przez człowieka są codziennością, jednak wiedza o tym jak działają – już nie.
+      Szukanie miejsc zerowych funkcji jest jednym z podstawowych zastosowań metod numerycznych. Dla niektórych funkcji jest to trudne (wielomiany 3 i 4 stopnia), dla innych niemożliwe metodami numerycznymi. Podobnie jak z algorytmami sortowania, istnieje wiele metod których wydajność się różni. Ważne jest to, że im więcej wiemy o danej funkcji od strony analitycznej (jej kolejne pochodne itd.) tym lepiej możemy dopasować algorytm.<br>
+      We wszystkich przykładach rozpatrzymy funckje w przedziałach (a, b), gdzie f(a)*f(b) jest mniejsze od zera, co gwarantuje wystąpienie miejsca zerowego w przedziale. <hr>
+      Do każdej metody dołączono plik w C++ na przykładzie funkcji f(x)=2cos(x)-0.5x^2
+    </div>
+    <div class="content"><img src="bisekcja.png" width=400 height=auto class="image-to-center">
+      <a href="bisekcja.cpp">PLIK W C++</a><hr>
+      <b>Metoda bisekcji</b> polega na policzeniu wartości na podzieleniu przedziału na dwa i wybrania tego, w którym znaki funkcji na krańcach są różne. Z każdą iteracją nasz przedział zawęża się tym samym o połowę. Przypomina to wyszukiwanie binarne.
+    </div>
+    <div class="content"><img src="sieczne.png" width=400 height=auto class="image-to-center">
+      <a href="sieczne.cpp">PLIK W C++</a><hr>
+      <b>Metoda siecznych</b> polega na zastąpieniu danej funkcji w przedziale funkcją liniową, która przechodzi przez krańce przedziału. Jej miejsce zerowe jest odpowiednikiem połowy przedziału z poprzedniego przedziału. Dalsze postępowanie jest analogiczne. Kiedy w bisekcji mieliśmy pewność co do wielkości przedziału po n krokach, przy siecznych jest to uzależnione od badanej funkcji.
+    </div>
+    <div class="content"><img src="newton.png" width=400 height=auto class="image-to-center">
+      <a href="newton.cpp">PLIK W C++</a><hr>
+      <b>Metoda Newtona</b> potrzebuje do działania analitycznej znajomości pochodnej. Zamiast siecznych, szukamy punktu przecięcia stycznej do wykresu z osią OX. Ten zabieg pozwala nam zwiększyć prędkość algorytmu (ze zbieżności liniowej do kwadratowej), ale daje możliwość rozbieżności w niektórych punktach np. kiedy pochodna jest równa 0.
     </div>
     <footer class="footer">Kacper Kowalski 2019</footer>
 </div>
